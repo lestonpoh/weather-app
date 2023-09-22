@@ -9,6 +9,12 @@ async function searchCurrentWeather(query){
     }catch(error){
         const locationName = document.querySelector("#location-name")
         locationName.textContent = 'Location not found.'
+
+        const display = document.querySelector("#weather-info")
+        display.classList = "hide"
+
+        const date =document.querySelector('#date')
+        date.textContent = ""
     }
     
 }
@@ -92,5 +98,7 @@ form.addEventListener("submit",async (e)=>{
         return
     }
     searchCurrentWeather(location)
+
+    form.reset()
     
 })
